@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="PadsBot Pro — a modular Telegram bot management suite with configurable branding, Mini App and service operations.">
@@ -7,18 +7,83 @@
 <style>
 :root{color-scheme:dark;--bg:#080d18;--panel:#141b2d;--ink:#f5f7fd;--muted:#adb9d1;--line:#34405a;--violet:#b99bff;--green:#70e1bc}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;background:radial-gradient(ellipse 70% 45% at 75% 0,#332252 0,transparent 70%),var(--bg);color:var(--ink)}a{color:inherit;text-decoration:none}a:hover{text-decoration:underline}button{cursor:pointer}.container{width:min(1080px,calc(100% - 40px));margin:auto}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding:22px 0}.logo{font-size:18px;font-weight:850;letter-spacing:-.5px}.logo span{color:var(--violet)}nav{display:flex;align-items:center;gap:22px;font-size:13px;color:var(--muted)}.lang{background:transparent;border:1px solid var(--line);border-radius:8px;color:var(--ink);font:inherit;padding:8px 12px}.hero{padding:110px 0 92px;max-width:780px}.kicker{text-transform:uppercase;letter-spacing:.19em;color:var(--green);font-size:11px;font-weight:800}.hero h1{font-size:clamp(39px,7vw,70px);line-height:1.08;letter-spacing:-.055em;margin:18px 0}.hero p{font-size:18px;line-height:1.8;color:var(--muted);max-width:680px}.pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:27px}.pill{border-radius:24px;border:1px solid var(--line);padding:8px 14px;font-size:12px;color:var(--muted)}.features{padding:35px 0 70px}.section-head{font-size:30px;letter-spacing:-.04em;margin:0 0 25px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.feature,.price{background:linear-gradient(150deg,#1b2135,#101724);border:1px solid var(--line);border-radius:18px;padding:25px}.feature h3{font-size:16px}.feature p,.price p{color:var(--muted);line-height:1.7;font-size:14px}.mini{font-size:21px}.pricing{padding:60px 0 85px;border-top:1px solid var(--line)}.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.price .amount{font-size:38px;font-weight:800;letter-spacing:-.06em;margin:22px 0 8px}.price.primary{border-color:var(--violet);box-shadow:0 0 45px #7156b51c}.tag{font-size:12px;color:var(--green)}.notice{border-left:3px solid var(--violet);padding:13px 18px;color:var(--muted);background:#222039;margin-top:24px;line-height:1.6;font-size:14px}.buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:29px}.btn{background:var(--violet);color:#0c1020;border-radius:10px;padding:13px 20px;font-weight:800;font-size:13px}.btn.secondary{color:var(--ink);background:transparent;border:1px solid var(--line)}footer{border-top:1px solid var(--line);padding:33px 0;color:var(--muted);font-size:12px}footer .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}.hidden{display:none!important}body.fa .local{direction:rtl;text-align:right}body.fa .hero h1{letter-spacing:0;font-size:clamp(35px,6vw,56px)}body.fa .hero{margin-left:auto;margin-right:0}@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.price-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:590px){nav{gap:10px;flex-wrap:wrap}.grid,.price-grid{grid-template-columns:1fr}.hero{padding:75px 0 55px}.top{align-items:flex-start}}
+
+/* PadsBot Pro responsive visual system — unified RTL/LTR layout */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--bg:#090d19;--surface:#141b2d;--surface2:#202744;--line:#35415b;--text:#f5f6ff;--muted:#afbdd6;--violet:#c1adff;--green:#7fe9ce}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{min-width:290px;color:var(--text);font-family:'Vazirmatn',Tahoma,'Segoe UI',sans-serif;font-size:14px;line-height:1.9;background:radial-gradient(ellipse 900px 520px at 80% -10%,#55408155,transparent 72%),radial-gradient(ellipse 500px 450px at 0% 40%,#23557524,transparent 80%),var(--bg)}
+html[lang="en"] body{font-family:'Inter','Segoe UI',Arial,sans-serif;line-height:1.7}
+body.fa{direction:rtl;text-align:start}html[dir="ltr"] body{direction:ltr;text-align:start}
+.container{width:min(1140px,calc(100% - 46px));margin-inline:auto}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--green);outline-offset:4px}
+.top{min-height:79px;padding:12px 0;border:0;gap:18px}
+body>.container:first-child{position:sticky;top:0;z-index:20;max-width:none;width:100%;border-bottom:1px solid #37425e80;background:#090d19ee;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+body>.container:first-child>.top{width:min(1140px,calc(100% - 46px));margin-inline:auto}
+.logo{direction:ltr;display:inline-flex;align-items:center;gap:9px;font-family:'Inter',sans-serif;font-size:22px;letter-spacing:-.06em}
+.logo:before{content:'P';display:inline-grid;place-items:center;width:37px;height:37px;background:linear-gradient(135deg,#d2baff,#87dedd);border-radius:12px;color:#191c32;font-size:22px;font-weight:800}
+nav{gap:clamp(10px,2.3vw,29px)}nav a{white-space:nowrap;font-weight:600;font-size:13px}nav .lang{min-width:82px;border:1px solid #687797;background:#212942;color:#fff;border-radius:11px;padding:8px 15px;font-weight:700}
+nav .lang:hover{background:#313956}
+.hero{max-width:none;padding:61px 0 77px;display:grid;grid-template-columns:minmax(0,1.14fr) minmax(0,.86fr);gap:21px;align-items:stretch}
+.hero-primary,.hero-preview{min-width:0;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,#20233d,#11182a 72%);box-shadow:0 22px 45px #0003}
+.hero-primary{padding:clamp(27px,4.4vw,56px)}
+.hero .kicker{color:var(--green);font-size:12px;font-weight:750;letter-spacing:0;text-transform:none}
+.hero h1,.hero h1.faText{margin:21px 0 23px;font-size:clamp(32px,4.3vw,57px);line-height:1.32;letter-spacing:-.025em;text-wrap:balance}
+html[lang="en"] .hero h1{line-height:1.1;letter-spacing:-.048em}
+.hero h1.faText{font-size:clamp(31px,4.05vw,53px)}
+.hero p{max-width:none;font-size:15px;line-height:2.05;color:var(--muted)}
+html[lang="en"] .hero p{line-height:1.85}
+.pills{margin-top:26px;gap:9px}.pill{direction:ltr;unicode-bidi:isolate;border-radius:9px;background:#ffffff08;border-color:#4b5270;padding:6px 11px;font-size:11px}
+.buttons{gap:12px;margin-top:26px}.btn{min-height:45px;display:inline-flex;align-items:center;justify-content:center;padding:11px 17px;border-radius:11px;font-size:12px;line-height:1.45;transition:transform .14s}.btn:hover{transform:translateY(-2px);text-decoration:none}.btn:not(.secondary){background:linear-gradient(130deg,#ccb4ff,#aa9afc);color:#151328}.btn.secondary{border-color:#66718d;background:#ffffff07}
+.hero-preview{padding:27px;display:flex;flex-direction:column;gap:13px}
+.preview-header{display:flex;justify-content:space-between;align-items:center;gap:9px;border-bottom:1px solid var(--line);padding-bottom:15px;font-weight:750;font-size:14px}
+.preview-badge{border:1px solid #8b78b0;border-radius:20px;padding:3px 10px;color:#dbccff;background:#8d63ce22;white-space:nowrap;font-size:10px}
+.preview-item{display:flex;align-items:flex-start;gap:12px;background:#10172a;border:1px solid #36405b;border-radius:14px;padding:14px}
+.preview-icon{display:grid;place-items:center;width:38px;height:38px;flex:none;border-radius:10px;background:#a48eff20;border:1px solid #ae8aff35;color:#d4baff;font-size:20px}
+.preview-item h3{font-size:13px;margin:0 0 5px;line-height:1.7}.preview-item p{color:var(--muted);font-size:12px;margin:0;line-height:1.75}.preview-caption{margin-top:auto;padding-top:13px;border-top:1px solid var(--line);color:var(--muted);font-size:11px}
+.features{padding:14px 0 75px}
+.section-intro{max-width:720px;margin-bottom:27px}.section-eyebrow{color:var(--green);font-weight:800;font-size:11px;letter-spacing:.04em}
+.section-head{font-size:clamp(24px,3vw,34px);margin:10px 0 9px;line-height:1.65;letter-spacing:0}
+.section-desc{color:var(--muted);font-size:13px;line-height:1.95;margin:0}
+.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.feature{min-height:232px;background:#151d31;border-color:var(--line);border-radius:18px;padding:24px;overflow-wrap:anywhere}
+.feature .mini{display:grid;place-items:center;width:45px;height:45px;font-size:23px;background:#a58dff20;color:#cebaff;border:1px solid #a58dff38;border-radius:12px;margin-bottom:18px}
+.feature h3{font-size:15px;line-height:1.7;margin:0 0 11px}.feature p{line-height:1.95;font-size:13px}
+.pricing{padding:67px 0 78px;background:linear-gradient(180deg,#15192b,#0f1525);border-top:1px solid #343d59;border-bottom:1px solid #343d59}
+.price-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.price{display:flex;flex-direction:column;min-height:240px;padding:24px;background:#1a2035;border:1px solid var(--line);border-radius:19px}
+.price.primary{background:linear-gradient(145deg,#3a2c50,#1b2038);border-color:#c3a9ff;box-shadow:0 15px 35px #845bc624}
+.price .tag{font-weight:750;color:#e2e8fa;font-size:13px}.price-highlight{font-size:10px;color:var(--green);font-weight:750;line-height:1.6;margin-bottom:10px}
+.price .amount{font-family:'Inter','Segoe UI',sans-serif;direction:ltr;text-align:start;unicode-bidi:isolate;font-size:42px;line-height:1.4;letter-spacing:-.045em;margin:16px 0 9px}
+.price p{font-size:12px;line-height:1.95;margin:0}.price:after{content:'';display:block;margin-top:auto;padding-top:15px;border-bottom:1px solid #37405c}
+.notice{border-left:0;border-inline-start:3px solid var(--violet);border-radius:13px;background:#29213e;padding:18px 21px;color:#c7ccde;font-size:12px;line-height:2.05;margin-top:19px}
+.pricing .buttons{margin-top:24px}
+.steps-section,.faq-section{padding:65px 0 18px}
+.steps-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.step{padding:24px;border:1px solid var(--line);border-radius:17px;background:#151d30}
+.step-number{display:inline-grid;place-items:center;width:38px;height:38px;border:1px solid #60827c;border-radius:11px;color:var(--green);direction:ltr;font-family:'Inter',sans-serif;font-weight:800}
+.step h3{font-size:15px;margin:15px 0 8px}.step p{font-size:13px;color:var(--muted);line-height:1.95;margin:0}
+.faq-section{padding-bottom:66px}.faq-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:14px}
+.faq-grid details{min-width:0;background:#151d30;border:1px solid var(--line);border-radius:15px;padding:17px 21px}
+.faq-grid summary{font-size:13px;font-weight:750;cursor:pointer}
+.faq-grid p{font-size:12px;line-height:2;color:var(--muted);margin:10px 0 0}
+footer{border-color:var(--line);margin-top:0}
+footer .container{gap:14px;align-items:center;line-height:1.9}
+@media(max-width:1000px){.hero{grid-template-columns:1fr}.hero-preview{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.preview-header,.preview-caption{grid-column:1/-1}.grid,.steps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.price-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.container,body>.container:first-child>.top{width:calc(100% - 28px)}.top{min-height:70px;padding:10px 0;gap:9px}.logo{font-size:18px}.logo:before{width:33px;height:33px;font-size:19px}nav{gap:9px}nav a{font-size:11px}.lang{min-width:65px!important;padding:6px 9px!important}.hero{padding:29px 0 53px}.hero-primary{padding:26px 22px}.hero h1,.hero h1.faText{font-size:clamp(30px,8vw,41px)}.hero p{font-size:14px}.hero-preview{display:flex;padding:21px}.grid,.price-grid,.steps-grid,.faq-grid{grid-template-columns:1fr}.feature{min-height:auto}.features{padding-bottom:53px}.pricing{padding:48px 0 57px}.price{min-height:200px}.price .amount{font-size:39px}.section-head{font-size:24px}.steps-section{padding-top:52px}.faq-section{padding-bottom:50px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
 </style>
 </head>
-<body>
-<div class="container"><header class="top"><a class="logo" href="#top">PadsBot <span>Pro</span></a><nav><a href="#features" data-fa="امکانات">Features</a><a href="#pricing" data-fa="قیمت‌ها">Pricing</a><button class="lang" id="toggle" type="button" aria-label="Switch language">فارسی</button></nav></header></div>
+<body class="fa">
+<div class="container"><header class="top"><a class="logo" href="#top">PadsBot <span>Pro</span></a><nav><a href="#features" data-fa="امکانات">Features</a><a href="#pricing" data-fa="قیمت‌ها">Pricing</a><a href="#faq" data-fa="سؤالات">FAQ</a><button class="lang" id="toggle" type="button" aria-label="Switch language">فارسی</button></nav></header></div>
 <main id="top">
-<section class="container hero local">
+<section class="container hero local" aria-label="PadsBot Pro"><div class="hero-primary">
 <div class="en"><div class="kicker">Telegram commerce infrastructure</div><h1>Your business.<br>Your brand.<br>One platform.</h1><p>Manage Telegram storefront workflows, customer service provisioning, seller operations and a customizable Mini App through a coherent commercial platform.</p></div>
 <div class="faText hidden" lang="fa"><div class="kicker">زیرساخت فروش در تلگرام</div><h1>کسب‌وکار شما.<br>برند شما.<br>یک پلتفرم.</h1><p>راهکاری منسجم برای مدیریت فروشگاه تلگرامی، کاربران، خدمات، فروشندگان و مینی‌اپ اختصاصی با قابلیت شخصی‌سازی هویت بصری.</p></div>
 <div class="pills"><span class="pill">PHP 8.2+</span><span class="pill">Python CLI</span><span class="pill">Telegram Mini App</span><span class="pill">White-Label</span></div>
-<div class="buttons"><a class="btn" href="#pricing" data-fa="مشاهده تعرفه‌ها">View Plans</a><a class="btn secondary" href="https://github.com/MrHamidRouter" data-fa="پروفایل توسعه‌دهنده ↗">Developer Profile ↗</a></div>
-</section>
-<section class="container features" id="features"><h2 class="section-head en">Purpose-built capabilities</h2><h2 class="section-head faText hidden" lang="fa">قابلیت‌های محصول</h2>
+<div class="buttons"><a class="btn" href="#pricing" data-fa="مشاهده تعرفه‌ها">View Plans</a><a class="btn secondary" href="https://github.com/MrHamidRouter/PadsBot-Pro-Showcase/blob/main/installer/bootstrap.py" data-fa="مشاهده نصاب عمومی ↗">View Public Installer ↗</a></div><aside class="hero-preview"><div class="preview-header"><span class="en">Platform overview</span><span class="faText hidden">نمای کلی سامانه</span><span class="preview-badge"><span class="en">Pre-release</span><span class="faText hidden">پیش از عرضه</span></span></div><div class="preview-item"><span class="preview-icon">◫</span><div><h3 data-fa="فروشگاه تلگرامی">Telegram Storefront</h3><p data-fa="منوی مشتری، فروش سرویس و عملیات اشتراک">Purchasing journeys and subscription operations</p></div></div><div class="preview-item"><span class="preview-icon">▤</span><div><h3 data-fa="مینی‌اپ اختصاصی">Branded Mini App</h3><p data-fa="رابط کاربری هماهنگ با برند مشتری">Customizable Telegram customer interface</p></div></div><div class="preview-item"><span class="preview-icon">⚙</span><div><h3 data-fa="پنل مدیریت و فروشندگان">Admin & Seller Tools</h3><p data-fa="مدیریت کاربران، خدمات و گزارش‌ها">Manage customers, services, and reports</p></div></div><div class="preview-item"><span class="preview-icon">◇</span><div><h3 data-fa="نصب و لایسنس">Installation & Licensing</h3><p data-fa="نسخه تجاری و فعال‌سازی در مرحله آزمون">Commercial deployment under validation</p></div></div><small class="preview-caption"><span class="en">Module overview, not an application screenshot.</span><span class="faText hidden">نمای ساختار محصول؛ تصویر واقعی پنل نیست.</span></small></aside></section>
+<section class="container features" id="features"><div class="section-intro"><span class="section-eyebrow en">PRODUCT CAPABILITIES</span><span class="section-eyebrow faText hidden">امکانات اصلی</span><h2 class="section-head en">Purpose-built capabilities</h2><h2 class="section-head faText hidden" lang="fa">قابلیت‌های حرفه‌ای PadsBot Pro</h2><p class="section-desc" data-fa="ابزارهای فروش، مدیریت و شخصی‌سازی در بخش‌های منظم و یکپارچه.">One coherent platform for sales, operations and customization.</p></div>
 <div class="grid">
 <article class="feature"><div class="mini">◈</div><h3 data-fa="فروشگاه تلگرامی">Telegram Storefront</h3><p data-fa="منوهای مشتری، مراحل خرید، اطلاعات سرویس و مدیریت اشتراک">Customer menus, purchase journeys, service information and subscription workflows.</p></article>
 <article class="feature"><div class="mini">◇</div><h3 data-fa="مدیریت و فروشندگان">Admin & Seller Operations</h3><p data-fa="مدیریت کاربران، خدمات، فروشندگان، گزارش‌ها و ابزار پیام‌رسانی">Customer, service and seller management, reporting and messaging tools.</p></article>
@@ -27,8 +92,8 @@
 <article class="feature"><div class="mini">✧</div><h3 data-fa="هویت بصری اختصاصی">White-Label Identity</h3><p data-fa="تغییر عنوان، لوگو، بنرها، راه ارتباطی و رنگ‌بندی از پنل مدیریت">Adjust names, logo, banners, support destinations and palette in the admin panel.</p></article>
 <article class="feature"><div class="mini">⌘</div><h3 data-fa="نصاب تعاملی">Interactive Installer</h3><p data-fa="بررسی محیط، اعتبار HTTPS و وب‌هوک و مراحل نصب کنترل‌شده">Environment checks, HTTPS/webhook verification and guarded deployment workflows.</p></article>
 </div></section>
-<section class="pricing" id="pricing"><div class="container"><h2 class="section-head en">Simple subscription pricing</h2><h2 class="section-head faText hidden" lang="fa">تعرفه اشتراک</h2><div class="price-grid">
-<div class="price primary"><span class="tag" data-fa="ماهانه">Monthly</span><div class="amount">$10</div><p data-fa="یک ربات فعال · یک ماه">One active bot · 1 month</p></div>
+<section class="pricing" id="pricing"><div class="container"><div class="section-intro"><span class="section-eyebrow en">SUBSCRIPTION PLANS</span><span class="section-eyebrow faText hidden">اشتراک تجاری</span><h2 class="section-head en">Simple subscription pricing</h2><h2 class="section-head faText hidden" lang="fa">تعرفه‌های PadsBot Pro</h2><p class="section-desc" data-fa="امکانات یکسان در تمامی دوره‌ها؛ هزینه زیرساخت بر عهده مشتری است.">Same Pro capabilities across all terms; hosting is separate.</p></div><div class="price-grid">
+<div class="price primary"><span class="price-highlight en">POPULAR START</span><span class="price-highlight faText hidden">شروع پیشنهادی</span><span class="tag" data-fa="ماهانه">Monthly</span><div class="amount">$10</div><p data-fa="یک ربات فعال · یک ماه">One active bot · 1 month</p></div>
 <div class="price"><span class="tag" data-fa="سه‌ماهه">Quarterly</span><div class="amount">$27</div><p data-fa="یک ربات فعال · سه ماه">One active bot · 3 months</p></div>
 <div class="price"><span class="tag" data-fa="شش‌ماهه">Semiannual</span><div class="amount">$54</div><p data-fa="یک ربات فعال · شش ماه">One active bot · 6 months</p></div>
 <div class="price"><span class="tag" data-fa="سالانه">Annual</span><div class="amount">$99</div><p data-fa="یک ربات فعال · یک سال">One active bot · 12 months</p></div>
@@ -37,8 +102,33 @@
 <div class="notice faText hidden" lang="fa"><strong>تعرفه پیشنهادی پیش از عرضه.</strong> هزینه سرور، دامنه و سرویس‌های جانبی با مشتری است. فروش خودکار، صدور لایسنس و نصب عملیاتی هنوز تأیید نهایی نشده‌اند. پیش از پرداخت، وضعیت عرضه را استعلام کنید. سورس و حق بازفروش شامل اشتراک نیست.</div>
 <div class="buttons"><a class="btn secondary" href="https://github.com/MrHamidRouter" data-fa="ارتباط با توسعه‌دهنده ↗">Contact the developer ↗</a><a class="btn secondary" href="https://github.com/MrHamidRouter" data-fa="دریافت اطلاعات محصول ↗">Request product details ↗</a></div>
 </div></section>
+<section class="container steps-section" id="installation"><div class="section-intro"><span class="section-eyebrow en">PLANNED DEPLOYMENT</span><span class="section-eyebrow faText hidden">مراحل راه‌اندازی</span><h2 class="section-head en">From a license to a branded bot</h2><h2 class="section-head faText hidden">از لایسنس تا ربات اختصاصی</h2><p class="section-desc" data-fa="این فرآیند پس از استقرار سرور لایسنس و تأیید نصب واقعی فعال خواهد شد.">The flow below will be available after license server deployment and production validation.</p></div><div class="steps-grid"><article class="step"><span class="step-number">01</span><h3 data-fa="انتخاب اشتراک">Choose a plan</h3><p data-fa="انتخاب مدت اشتراک برای یک ربات فعال.">Choose a billing term for one active bot.</p></article><article class="step"><span class="step-number">02</span><h3 data-fa="فعال‌سازی لایسنس">Activate your license</h3><p data-fa="دریافت کلید برای دامنه ثبت‌شده، پس از آغاز فروش رسمی.">Receive a key for your registered domain after public release.</p></article><article class="step"><span class="step-number">03</span><h3 data-fa="نصب و راه‌اندازی">Deploy your bot</h3><p data-fa="اعتبارسنجی کلید، دانلود نسخه تجاری و اجرای نصاب.">Validate the key, download the release and run guided setup.</p></article></div></section>
+<section class="container faq-section" id="faq"><div class="section-intro"><span class="section-eyebrow en">FREQUENTLY ASKED QUESTIONS</span><span class="section-eyebrow faText hidden">راهنمای خرید</span><h2 class="section-head en">Questions before you start</h2><h2 class="section-head faText hidden">سؤالات متداول</h2></div><div class="faq-grid"><details><summary data-fa="آیا هزینه سرور داخل اشتراک است؟">Is hosting included?</summary><p data-fa="خیر. هزینه سرور، دامنه و سرویس‌های جانبی جداگانه بر عهده مشتری است.">No. Server, domain and third-party service costs are paid separately.</p></details><details><summary data-fa="آیا سورس اصلی همراه اشتراک ارائه می‌شود؟">Is the source code included?</summary><p data-fa="خیر. مخزن توسعه خصوصی است و حق بازفروش نیز در اشتراک وجود ندارد.">No. The development source and resale rights are not included.</p></details><details><summary data-fa="آیا فروش اشتراک هم‌اکنون فعال است؟">Can I purchase a subscription now?</summary><p data-fa="خیر. پرداخت خودکار و فعال‌سازی تجاری هنوز تأیید نهایی نشده‌اند.">Not yet. Checkout and commercial deployment are under validation.</p></details><details><summary data-fa="نصاب عمومی چه زمانی فعال می‌شود؟">When is the public installer available?</summary><p data-fa="فایل نصاب برای بررسی عمومی موجود است؛ استفاده عملی پس از راه‌اندازی سرور لایسنس امکان‌پذیر می‌شود.">The installer is public for review, but requires a live license API and approved release.</p></details></div></section>
 </main><footer><div class="container"><span>PadsBot Pro · Lead Developers: Mr.HamidRouter & AlirezaX5</span><span>Commercial Software · Current release undergoing production validation</span></div></footer>
 <script>
-const button=document.getElementById('toggle');button.addEventListener('click',()=>{const fa=document.body.classList.toggle('fa');document.documentElement.lang=fa?'fa':'en';document.querySelectorAll('.en').forEach(n=>n.classList.toggle('hidden',fa));document.querySelectorAll('.faText').forEach(n=>n.classList.toggle('hidden',!fa));document.querySelectorAll('[data-fa]').forEach(n=>{if(!n.dataset.en)n.dataset.en=n.textContent;n.textContent=fa?n.dataset.fa:n.dataset.en});button.textContent=fa?'English':'فارسی'});
+(function(){
+  "use strict";
+  const root=document.documentElement;
+  const body=document.body;
+  const button=document.getElementById('toggle');
+  const translated=[...document.querySelectorAll('[data-fa]')];
+  translated.forEach(el=>{el.dataset.en=el.textContent;});
+  function apply(lang){
+    const fa=lang==='fa';
+    root.lang=lang;
+    root.dir=fa?'rtl':'ltr';
+    body.classList.toggle('fa',fa);
+    document.querySelectorAll('.en').forEach(el=>el.classList.toggle('hidden',fa));
+    document.querySelectorAll('.faText').forEach(el=>el.classList.toggle('hidden',!fa));
+    translated.forEach(el=>{el.textContent=fa?el.dataset.fa:el.dataset.en;});
+    button.textContent=fa?'English':'فارسی';
+    button.setAttribute('aria-label',fa?'Switch to English':'تغییر زبان به فارسی');
+    try {localStorage.setItem('padsbot_showcase_language',lang);}catch(error){}
+  }
+  let preferred='fa';
+  try {const stored=localStorage.getItem('padsbot_showcase_language');if(stored==='en'||stored==='fa')preferred=stored;}catch(error){}
+  apply(preferred);
+  button.addEventListener('click',()=>apply(root.lang==='fa'?'en':'fa'));
+})();
 </script>
 </body></html>
