@@ -40,13 +40,13 @@ input:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid 
 <form id="orderForm">
 <label for="plan">مدت اشتراک</label>
 <select id="plan" name="plan" required>
-<option value="monthly">ماهانه — ۱۰ دلار</option>
-<option value="quarterly">سه‌ماهه — ۲۷ دلار</option>
-<option value="semiannual">شش‌ماهه — ۵۴ دلار</option>
-<option value="annual">سالانه — ۹۹ دلار</option>
+<option value="monthly">ماهانه — ۱۲ دلار</option>
+<option value="quarterly">سه‌ماهه — ۳۳ دلار</option>
+<option value="semiannual">شش‌ماهه — ۶۶ دلار</option>
+<option value="annual">سالانه — ۱۲۳ دلار</option>
 </select>
-<div class="amount"><span>مبلغ پایه اشتراک</span><strong id="displayAmount">10 USDT</strong></div>
-<p class="small">در زمان صدور فاکتور، مبلغ دقیق با کسری کوچک برای شناسایی پرداخت محاسبه می‌شود.</p>
+<div class="amount"><span>قیمت نهایی پلن با میزبانی متعارف</span><strong id="displayAmount">12 USDT</strong></div>
+<p class="small">لایسنس یک دامنه + مینی‌اپ Pro + میزبانی مدیریت‌شده روی سرور ما شامل قیمت است. دامنه و خدمات جانبی جداگانه‌اند. هنگام صدور فاکتور، مبلغ دقیق با کسری کوچک جهت شناسایی پرداخت محاسبه می‌شود.</p>
 <label for="domain">دامنه ربات مشتری</label>
 <input id="domain" name="domain" required placeholder="bot.example.com" dir="ltr" maxlength="253" autocomplete="off">
 <label for="contact">ایمیل یا آیدی تلگرام جهت تحویل لایسنس</label>
@@ -74,7 +74,7 @@ input:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid 
 (()=>{
   "use strict";
   const qs=id=>document.getElementById(id);
-  const prices={monthly:10,quarterly:27,semiannual:54,annual:99};
+  const prices={monthly:12,quarterly:33,semiannual:66,annual:123};
   const wallet="TJ6ys9jPCXGUEyHyXX9hodjeFxQ6zWGD6Q";
   const msg={
     disabled:"سرور پرداخت هنوز فعال نشده است؛ هیچ وجهی انتقال ندهید. راه‌اندازی و تست تراکنش واقعی لازم است.",
