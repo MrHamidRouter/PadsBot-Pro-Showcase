@@ -1,0 +1,33 @@
+name: Showcase acceptance checks
+on:
+  push:
+    paths:
+      - 'index.html'
+      - 'en.html'
+      - 'checkout.html'
+      - 'checkout-en.html'
+      - 'checkout-config.json'
+      - 'tests/test_showcase.py'
+      - '.github/workflows/showcase-tests.yml'
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'en.html'
+      - 'checkout.html'
+      - 'checkout-en.html'
+      - 'checkout-config.json'
+      - 'tests/test_showcase.py'
+permissions:
+  contents: read
+jobs:
+  verify-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m unittest discover -s tests -p 'test_showcase.py' -v
