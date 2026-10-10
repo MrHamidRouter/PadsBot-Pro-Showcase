@@ -4,20 +4,20 @@ A public-facing introduction to the PadsBot Pro commercial Telegram bot platform
 
 ## Subscription proposal
 
-| Term | USD |
+| Term | Managed Pro total (USDT) |
 |---|---:|
-| Monthly | $10 |
-| Quarterly | $27 |
-| Semiannual | $54 |
-| Annual | $99 |
+| Monthly | **$12** |
+| Quarterly | **$33** |
+| Semiannual | **$66** |
+| Annual | **$123** |
 
-Server, domain and third-party panel costs are paid separately by customers. Application source and resale rights are excluded. Prices are **proposed** until public checkout and production verification are ready.
+All prices include one licensed domain, the branded Mini App, and standard managed hosting on PadsBot infrastructure (hosting component: $2/month). Domain registration/renewal, third-party fees and above-plan use are extra. Application source and resale rights are excluded. Prices are **proposed** until public checkout and production verification are ready.
 
 ## Customer installer (pre-release)
 
-The [public Python bootstrap](installer/bootstrap.py) is available for security review. It requests a purchased license key without echoing it, validates a licensed domain, contacts the operator's HTTPS license API, verifies the release archive checksum, and then delegates setup to the private application installer.
+The [legacy public Python bootstrap](installer/bootstrap.py) remains available for security review. With Managed Pro, customers receive a hosted bot and admin access, not source code or an installation package. It requests a purchased license key without echoing it, validates a licensed domain, contacts the operator's HTTPS license API, verifies the release archive checksum, and then delegates setup to the private application installer.
 
-**Not yet usable for customer deployments:** The central license API has not been deployed to an advertised production domain, a release package has not been approved for paid delivery, and automated checkout is unavailable. There is no valid purchase or activation URL to enter at this stage. Customer installation instructions will be published after live end-to-end acceptance tests.
+**Managed checkout not yet operational:** The license API, TRC20 verification and managed provisioning require production end-to-end tests before payments can be accepted. Do not transfer funds.
 
 The full PHP source, administrative license server, private release archives, and keys are **not** in this public repository.
 
