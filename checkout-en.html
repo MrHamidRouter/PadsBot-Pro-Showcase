@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="PadsBot Pro — secure TRON USDT subscription checkout">
+<title>Checkout — PadsBot Pro</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+:root{color-scheme:dark;--bg:#0a1020;--card:#131c31;--surface:#1a2540;--border:#2a3756;--text:#f4f7ff;--muted:#a9b4cc;--violet:#a78bfa;--cyan:#38bdf8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse 800px 460px at 50% -120px,#8b5cf639,transparent 75%),var(--bg);color:var(--text);font:14px/1.85 'Inter',sans-serif,sans-serif}a{color:inherit;text-decoration:none}
+header{background:#0a1020eb;border-bottom:1px solid var(--border);backdrop-filter:blur(16px)}.wrap{width:min(1050px,calc(100% - 36px));margin-inline:auto}.head{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font:800 23px 'Inter',sans-serif;direction:ltr;white-space:nowrap}.brand b{color:var(--violet)}.brand:before{content:'P';display:inline-grid;place-items:center;width:36px;height:36px;border-radius:11px;background:linear-gradient(120deg,#a78bfa,#38bdf8);color:#10152a;margin-inline-end:9px}
+.link{border:1px solid #405075;padding:9px 14px;border-radius:10px;font-weight:700;font-size:12px}.link:hover{background:#1a2540}.headnav{display:flex;gap:12px;align-items:center}
+main{padding:48px 0 88px}h1{font-size:clamp(26px,4vw,40px);margin:5px 0 8px;line-height:1.5}h2{font-size:19px;margin:0 0 14px}p{margin:0}.eyebrow{color:var(--cyan);font:800 11px 'Inter',sans-serif;letter-spacing:.11em}.subtitle{color:var(--muted);max-width:700px;line-height:2}
+.checkout-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(290px,.8fr);gap:21px;margin-top:28px;align-items:start}
+.panel{background:linear-gradient(155deg,#1a2440,#131c31 72%);border:1px solid #344465;border-radius:20px;padding:27px;min-width:0;box-shadow:0 16px 48px #0002}
+label{display:block;font-weight:700;font-size:13px;margin:17px 0 8px}
+input,select{background:#0c1529;color:#f4f7ff;border:1px solid #3e4e72;width:100%;border-radius:10px;padding:12px 14px;font:500 14px 'Vazirmatn',Inter,sans-serif;min-height:48px;outline-offset:2px}
+input:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.amount{margin-top:19px;border:1px solid #7664b5;background:#8b5cf619;padding:17px;border-radius:13px;display:flex;align-items:center;justify-content:space-between;gap:10px}.amount strong{font:800 27px 'Inter',sans-serif;color:#d0c0ff;direction:ltr;white-space:nowrap}
+.small{color:var(--muted);font-size:12px;line-height:1.9;margin-top:10px}
+.btn{cursor:pointer;font:800 13px 'Vazirmatn',Inter,sans-serif;border:0;border-radius:11px;padding:13px 17px;min-height:47px;background:linear-gradient(125deg,#8b5cf6,#a78bfa);color:#fff}.btn:hover{filter:brightness(1.08)}.btn:disabled{opacity:.55;cursor:wait}.btn.ghost{background:#222d48;border:1px solid #53638c}.full{width:100%;margin-top:21px}
+.status{margin-top:17px;padding:14px 16px;border:1px solid #69547f;border-inline-start:4px solid #a78bfa;border-radius:10px;background:#27213d;color:#dfd7f4;font-size:12px;line-height:2}
+.status.good{border-color:#206d78;border-inline-start-color:#38bdf8;background:#12303d}
+.status.bad{border-color:#8e515f;border-inline-start-color:#fb7185;background:#39212b}
+.qr-panel{text-align:center}.qr-shell{display:inline-flex;position:relative;margin:12px auto;padding:12px;background:#fff;border-radius:17px;min-height:245px;min-width:245px;align-items:center;justify-content:center}.qr-shell img{display:block;width:220px;height:220px}.qr-watermark{position:absolute;inset:0;display:grid;place-items:center;background:#0a10209a;color:#fff;font-size:18px;font-weight:800;text-shadow:0 2px 15px #000;line-height:1.5;border-radius:17px}
+.wallet{overflow-wrap:anywhere;direction:ltr;unicode-bidi:isolate;font:600 12px/1.7 'Inter',sans-serif;color:#c5b7ff;background:#0b1426;padding:13px;border-radius:10px;border:1px dashed #47597e;margin:12px auto}
+.row{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}.row button{flex:1;min-width:110px}
+.alert{border:1px solid #876039;background:#362719;color:#fce7c4;padding:13px 14px;border-radius:10px;font-size:12px;line-height:1.9;margin-top:17px;text-align:start}
+.hidden{display:none!important}.mono{font-family:Inter,monospace;direction:ltr;unicode-bidi:isolate;overflow-wrap:anywhere}.paid-details{padding:15px 0;border-top:1px solid #344465;margin-top:17px}footer{padding:22px 0;border-top:1px solid var(--border);color:var(--muted);font-size:12px;text-align:center}
+@media(max-width:760px){.checkout-grid{grid-template-columns:1fr}main{padding-top:30px}.panel{padding:21px}.head{min-height:68px}.headnav{gap:7px}.link{padding:8px 10px}}
+</style>
+</head>
+<body>
+<header><div class="wrap head"><a class="brand" href="./en.html">PadsBot <b>Pro</b></a><nav class="headnav"><a class="link" href="./en.html#pricing">Back to pricing</a><a class="link" id="languageLink" href="./checkout.html?plan=monthly">فارسی</a></nav></div></header>
+<main class="wrap"><span class="eyebrow">PADSBOT PRO / CHECKOUT</span><h1>Subscription checkout</h1>
+<p class="subtitle">Select a plan, enter your domain and contact. Once the payment server is active, a unique invoice and USDT QR code will be generated.</p>
+<div class="checkout-grid"><section class="panel" aria-labelledby="formTitle">
+<h2 id="formTitle">Order details</h2>
+<form id="orderForm">
+<label for="plan">Subscription term</label>
+<select id="plan" name="plan" required>
+<option value="monthly">Monthly — $10</option>
+<option value="quarterly">Quarterly — $27</option>
+<option value="semiannual">Semiannual — $54</option>
+<option value="annual">Annual — $99</option>
+</select>
+<div class="amount"><span>Base subscription price</span><strong id="displayAmount">10 USDT</strong></div>
+<p class="small">A small unique fractional amount will be added when a real invoice is created.</p>
+<label for="domain">Customer bot domain</label>
+<input id="domain" name="domain" required placeholder="bot.example.com" dir="ltr" maxlength="253" autocomplete="off">
+<label for="contact">Email or Telegram for license delivery</label>
+<input id="contact" name="contact" required placeholder="@username / email@example.com" dir="ltr" maxlength="200" autocomplete="email">
+<button type="submit" class="btn full" id="createInvoice">Create invoice & payment QR</button>
+</form>
+<div class="status" id="status" role="status" aria-live="polite">Checkout is not active yet. Payments and license delivery are not enabled. Do not transfer funds.</div>
+<div id="transactionArea" class="hidden">
+<label for="txid">Transaction hash (TXID) after payment</label>
+<input id="txid" maxlength="64" minlength="64" dir="ltr" placeholder="64-character transaction hash" autocomplete="off">
+<button class="btn full" type="button" id="verifyPayment">Verify transaction and deliver license</button>
+<div id="licenseArea" class="hidden paid-details"><b>License key</b><div id="licenseKey" class="wallet mono"></div><button class="btn ghost" id="copyLicense" type="button">Copy license</button></div>
+</div>
+</section>
+<aside class="panel qr-panel" aria-labelledby="walletTitle"><h2 id="walletTitle">Pay with Trust Wallet</h2>
+<p class="small">Asset: Tether USDT · Network: TRON (TRC20)</p>
+<div class="qr-shell"><img id="walletQr" alt="TRC20 receiving address QR code" width="220" height="220" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&amp;data=TJ6ys9jPCXGUEyHyXX9hodjeFxQ6zWGD6Q"><div class="qr-watermark" id="qrWatermark">PREVIEW — NOT LIVE</div></div>
+<div class="wallet" id="walletAddress">TJ6ys9jPCXGUEyHyXX9hodjeFxQ6zWGD6Q</div>
+<div class="row"><button class="btn ghost" type="button" id="copyAddress">Copy address</button><button class="btn ghost" type="button" id="copyAmount">Copy amount</button></div>
+<div id="invoiceDetails" class="hidden paid-details"><p><b>Exact invoice amount:</b> <span class="mono" id="invoiceAmount"></span></p><p><b>Expires:</b> <span class="mono" id="expiry"></span></p></div>
+<p class="alert">Warning: Until the payment server issues a valid invoice, this QR is only a preview. Do not send funds. Once enabled, pay the exact invoice amount on TRC20.</p>
+</aside></div></main>
+<footer>© PadsBot Pro · Mr.HamidRouter &amp; AlirezaX5</footer>
+<script>
+(()=>{
+  "use strict";
+  const qs=id=>document.getElementById(id);
+  const prices={monthly:10,quarterly:27,semiannual:54,annual:99};
+  const wallet="TJ6ys9jPCXGUEyHyXX9hodjeFxQ6zWGD6Q";
+  const msg={
+    disabled:"Payment server is not enabled; do not send funds. Deployment and live validation are required.",
+    invalid:"Enter a valid domain such as bot.example.com.",
+    error:"Could not reach the payment server. Do not make a payment.",
+    pending:"Invoice active. Send only the exact amount on TRON/TRC20 and then enter its TXID.",
+    verifying:"Checking confirmed blockchain transfer...",
+    success:"Payment verified and license issued. Save your key securely.",
+    txerror:"Transaction hash must be 64 hexadecimal characters."
+  };
+  const params=new URLSearchParams(window.location.search);
+  let desired=params.get("plan");
+  if(!Object.prototype.hasOwnProperty.call(prices,desired))desired="monthly";
+  qs("plan").value=desired;
+  let active=null;
+  let api="";
+  let enabled=false;
+  function status(text,bad=false,good=false){
+    const x=qs("status");x.textContent=text;
+    x.className="status"+(bad?" bad":good?" good":"");
+  }
+  function refresh(){
+    const plan=qs("plan").value;
+    qs("displayAmount").textContent=prices[plan]+" USDT";
+    qs("languageLink").href="./checkout.html?plan="+encodeURIComponent(plan);
+    if(active && active.plan!==plan){
+      status("Plan changed; create a new invoice before proceeding.");
+      qs("transactionArea").classList.add("hidden");qs("invoiceDetails").classList.add("hidden");
+      qs("qrWatermark").classList.remove("hidden");active=null;
+    }
+  }
+  qs("plan").addEventListener("change",refresh);refresh();
+  async function copy(text){
+    try{await navigator.clipboard.writeText(text);status("Copied.",false,true);}
+    catch(e){window.prompt("Copy this value:",text);}
+  }
+  qs("copyAddress").addEventListener("click",()=>copy(wallet));
+  qs("copyAmount").addEventListener("click",()=>copy(active?active.amount_usdt:prices[qs("plan").value].toString()));
+  qs("copyLicense").addEventListener("click",()=>copy(qs("licenseKey").textContent));
+  async function post(path,body){
+    const res=await fetch(api+path,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body),cache:"no-store"});
+    const data=await res.json();
+    if(!res.ok)throw new Error(typeof data.detail==="string"?data.detail:msg.error);
+    return data;
+  }
+  (async()=>{
+    try{
+      const res=await fetch("./checkout-config.json",{cache:"no-store"});
+      const config=await res.json();
+      if(config.accept_payments===true && typeof config.api_base==="string"){
+        const parsed=new URL(config.api_base);
+        if(parsed.protocol!=="https:" || parsed.username || parsed.password || parsed.search || parsed.hash)throw Error("Invalid checkout API origin");
+        api=parsed.origin;
+        const health=await fetch(api+"/healthz",{cache:"no-store"});
+        if(!health.ok)throw Error("Server unavailable");
+        enabled=true;
+        status("Payment server connected. Enter details to create an invoice.",false,true);
+      }
+    }catch(e){status(msg.disabled);}
+  })();
+  qs("orderForm").addEventListener("submit",async event=>{
+    event.preventDefault();
+    const domain=qs("domain").value.trim().toLowerCase().replace(/\.$/,"");
+    const contact=qs("contact").value.trim();
+    if(!/^[a-z0-9-]+(\.[a-z0-9-]+)+$/.test(domain)||domain.length>253){
+      status(msg.invalid,true);return;
+    }
+    if(!enabled){status(msg.disabled,true);return;}
+    const submit=qs("createInvoice");submit.disabled=true;
+    try{
+      const plan=qs("plan").value;
+      const invoice=await post("/v1/payments/new",{domain,contact,plan});
+      if(invoice.address!==wallet || invoice.asset!=="USDT" || !invoice.receipt_secret || !/^\d+\.\d{6}$/.test(invoice.amount_usdt))throw Error(msg.error);
+      active={...invoice,plan};
+      qs("invoiceAmount").textContent=invoice.amount_usdt+" USDT";
+      qs("expiry").textContent=new Date(invoice.expires_at_ms).toLocaleString();
+      qs("invoiceDetails").classList.remove("hidden");
+      qs("transactionArea").classList.remove("hidden");
+      qs("qrWatermark").classList.add("hidden");
+      status(msg.pending,false,true);
+    }catch(e){status(e.message||msg.error,true);}
+    finally{submit.disabled=false;}
+  });
+  qs("verifyPayment").addEventListener("click",async()=>{
+    if(!active){status(msg.disabled,true);return;}
+    const txid=qs("txid").value.trim();
+    if(!/^[0-9a-fA-F]{64}$/.test(txid)){status(msg.txerror,true);return;}
+    const btn=qs("verifyPayment");btn.disabled=true;status(msg.verifying);
+    try{
+      const result=await post("/v1/payments/claim",{order_id:active.order_id,receipt_secret:active.receipt_secret,txid});
+      if(result.status!=="paid" || typeof result.license_key!=="string")throw Error(msg.error);
+      qs("licenseKey").textContent=result.license_key;
+      qs("licenseArea").classList.remove("hidden");status(msg.success,false,true);
+    }catch(e){status(e.message||msg.error,true);}
+    finally{btn.disabled=false;}
+  });
+})();
+</script>
+</body>
+</html>
