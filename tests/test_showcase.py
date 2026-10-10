@@ -96,10 +96,11 @@ class ShowcaseTests(unittest.TestCase):
         for file in ("index.html","en.html"):
             with self.subTest(file=file):
                 html=(ROOT/file).read_text(encoding="utf8")
-                match=re.search(r'<section class="container panel-support" '
-                                r'id="panel-support"[\\s\\S]*?</section>',html)
-                self.assertIsNotNone(match,"Missing dedicated panel section")
-                section=match.group(0)
+                start=html.find('<section class="container panel-support" id="panel-support"')
+                self.assertNotEqual(start,-1,"Missing dedicated panel section")
+                end=html.find('</section>',start)
+                self.assertGreater(end,start)
+                section=html[start:end+len('</section>')]
                 for name,status in stages.items():
                     self.assertEqual(len(re.findall(
                         r'data-panel="'+name+'" data-status="'+status+'"',section)),1)
