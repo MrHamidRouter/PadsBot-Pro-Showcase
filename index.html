@@ -121,6 +121,50 @@ footer .container{gap:14px;align-items:center;line-height:1.9}
   main>.hero .hero-preview .preview-item{min-width:0}
 }
 
+
+/* PadsBot Pro · premium violet/cyan design system */
+:root{--bg:#0a1020;--panel:#131c31;--surface:#131c31;--surface2:#1a2540;--ink:#f4f7ff;--text:#f4f7ff;--muted:#a9b4cc;--line:#2a3756;--violet:#a78bfa;--green:#38bdf8}
+body{background:radial-gradient(ellipse 920px 490px at 50% -170px,#8b5cf633,transparent 72%),radial-gradient(ellipse 630px 450px at 100% 42%,#38bdf80c,transparent 74%),#0a1020}
+body>.container:first-child{background:#0a1020ee;border-bottom-color:#2a3756}
+.logo span{color:#a78bfa}.logo:before{background:linear-gradient(135deg,#a78bfa,#38bdf8)}
+nav .lang{background:#1a2540;border-color:#344466}
+.hero-primary,.hero-preview{border-color:#334369;background:linear-gradient(150deg,#1d2540,#11192d 79%)}
+main>.hero .hero-primary{background:radial-gradient(ellipse at 50% 0%,#8b5cf62d,transparent 63%),linear-gradient(145deg,#1d2540,#11192d 75%)}
+.hero .kicker,.section-eyebrow,.price-highlight,.tag{color:#38bdf8}
+.hero h1{color:#f4f7ff}.hero h1::first-line{color:#e0d2ff}
+.btn:not(.secondary),.plan-buy,.checkout-submit{background:linear-gradient(125deg,#8b5cf6,#a78bfa);color:#fff;border:0;box-shadow:0 9px 26px #7c3aed29}
+.btn.secondary{border-color:#394c70}.btn.secondary:hover{background:#1a2540}
+.feature,.step,.faq-grid details,.price{background:#131c31;border-color:#2a3756}
+.feature:hover,.price:hover{border-color:#8b5cf68c;box-shadow:0 12px 28px #080d1855;transform:translateY(-2px)}
+.feature,.price,.step{transition:border-color .2s,box-shadow .2s,transform .2s}
+.feature .mini,.preview-icon{color:#a78bfa;border-color:#8b5cf642;background:#8b5cf61b}
+.preview-item{background:#121c32;border-color:#2a3756}
+.pricing{background:linear-gradient(180deg,#121b30,#0d1527);border-color:#2a3756}
+.price{min-height:298px}
+.price.primary{background:linear-gradient(160deg,#30264e,#171f36 75%);border-color:#a78bfa}
+.price .tag{color:#f4f7ff}
+.price:after{display:none}
+.plan-buy{display:block;width:100%;margin-top:auto;padding:12px 15px;border-radius:11px;font:700 13px inherit;min-height:46px;cursor:pointer;text-align:center}
+.plan-buy:hover{filter:brightness(1.12)}
+.notice{background:#1f2039;border-inline-start-color:#8b5cf6;color:#bcc7de}
+.step-number{color:#38bdf8;border-color:#38bdf87d}
+.checkout-dialog{width:min(510px,calc(100% - 26px));max-height:min(90vh,800px);border:1px solid #48567c;border-radius:22px;background:#131c31;color:#f4f7ff;padding:0;box-shadow:0 30px 100px #000b;overflow:auto}
+.checkout-dialog::backdrop{background:#020513bd;backdrop-filter:blur(6px)}
+.checkout-shell{padding:29px;display:flex;flex-direction:column;gap:12px}
+.checkout-head{display:flex;align-items:start;justify-content:space-between;gap:15px}
+.checkout-head h2{font-size:23px;margin:3px 0 9px}
+.close-checkout{border:1px solid #394566;color:#f4f7ff;background:#1a2540;width:36px;height:36px;border-radius:10px;font-size:24px}
+.checkout-selected{display:flex;justify-content:space-between;align-items:center;padding:15px;border:1px solid #59488b;background:#8b5cf615;border-radius:13px;gap:12px}
+.checkout-selected strong{color:#c4b5fd;font-family:Inter,Arial,sans-serif}
+.checkout-label{font-weight:700;font-size:12px;margin-top:7px}
+.checkout-shell input{width:100%;border:1px solid #3d4c6e;border-radius:10px;padding:12px 14px;font:500 14px Inter,'Vazirmatn',sans-serif;background:#0b1325;color:#f4f7ff;outline-offset:2px}
+.checkout-shell input:focus{outline:2px solid #8b5cf6}
+.checkout-note{background:#27233b;border-inline-start:3px solid #a78bfa;padding:13px 15px;border-radius:9px;font-size:12px;line-height:1.9;color:#d0c9ea}
+.checkout-submit{padding:14px;border-radius:11px;font-size:13px;font-weight:800}
+.checkout-submit:disabled{cursor:not-allowed;filter:grayscale(.7);opacity:.65}
+.checkout-foot{margin:0;color:#a9b4cc;font-size:11px;line-height:1.9}
+@media(max-width:620px){.checkout-shell{padding:22px}.price{min-height:242px}}
+
 </style>
 </head>
 <body class="fa">
@@ -141,10 +185,10 @@ footer .container{gap:14px;align-items:center;line-height:1.9}
 <article class="feature"><div class="mini">⌘</div><h3 data-fa="نصاب تعاملی">Interactive Installer</h3><p data-fa="بررسی محیط، اعتبار HTTPS و وب‌هوک و مراحل نصب کنترل‌شده">Environment checks, HTTPS/webhook verification and guarded deployment workflows.</p></article>
 </div></section>
 <section class="pricing" id="pricing"><div class="container"><div class="section-intro"><span class="section-eyebrow en">SUBSCRIPTION PLANS</span><span class="section-eyebrow faText hidden">اشتراک تجاری</span><h2 class="section-head en">Simple subscription pricing</h2><h2 class="section-head faText hidden" lang="fa">تعرفه‌های PadsBot Pro</h2><p class="section-desc" data-fa="امکانات یکسان در تمامی دوره‌ها؛ هزینه زیرساخت بر عهده مشتری است.">Same Pro capabilities across all terms; hosting is separate.</p></div><div class="price-grid">
-<div class="price primary"><span class="price-highlight en">POPULAR START</span><span class="price-highlight faText hidden">شروع پیشنهادی</span><span class="tag" data-fa="ماهانه">Monthly</span><div class="amount">$10</div><p data-fa="یک ربات فعال · یک ماه">One active bot · 1 month</p></div>
-<div class="price"><span class="tag" data-fa="سه‌ماهه">Quarterly</span><div class="amount">$27</div><p data-fa="یک ربات فعال · سه ماه">One active bot · 3 months</p></div>
-<div class="price"><span class="tag" data-fa="شش‌ماهه">Semiannual</span><div class="amount">$54</div><p data-fa="یک ربات فعال · شش ماه">One active bot · 6 months</p></div>
-<div class="price"><span class="tag" data-fa="سالانه">Annual</span><div class="amount">$99</div><p data-fa="یک ربات فعال · یک سال">One active bot · 12 months</p></div>
+<div data-plan="monthly" class="price primary"><span class="price-highlight en">POPULAR START</span><span class="price-highlight faText hidden">شروع پیشنهادی</span><span class="tag" data-fa="ماهانه">Monthly</span><div class="amount">$10</div><p data-fa="یک ربات فعال · یک ماه">One active bot · 1 month</p><button class="plan-buy" type="button" data-checkout="monthly" data-fa="انتخاب و ادامه خرید">Choose plan →</button></div>
+<div data-plan="quarterly" class="price"><span class="tag" data-fa="سه‌ماهه">Quarterly</span><div class="amount">$27</div><p data-fa="یک ربات فعال · سه ماه">One active bot · 3 months</p><button class="plan-buy" type="button" data-checkout="quarterly" data-fa="انتخاب و ادامه خرید">Choose plan →</button></div>
+<div data-plan="semiannual" class="price"><span class="tag" data-fa="شش‌ماهه">Semiannual</span><div class="amount">$54</div><p data-fa="یک ربات فعال · شش ماه">One active bot · 6 months</p><button class="plan-buy" type="button" data-checkout="semiannual" data-fa="انتخاب و ادامه خرید">Choose plan →</button></div>
+<div data-plan="annual" class="price"><span class="tag" data-fa="سالانه">Annual</span><div class="amount">$99</div><p data-fa="یک ربات فعال · یک سال">One active bot · 12 months</p><button class="plan-buy" type="button" data-checkout="annual" data-fa="انتخاب و ادامه خرید">Choose plan →</button></div>
 </div>
 <div class="notice en"><strong>Pre-launch pricing proposal.</strong> Hosting, domain and third-party provider charges are paid by the customer. Subscription checkout, license fulfillment and fresh-production deployment are not yet certified. Request availability before making payment. Source code and resale rights are excluded.</div>
 <div class="notice faText hidden" lang="fa"><strong>تعرفه پیشنهادی پیش از عرضه.</strong> هزینه سرور، دامنه و سرویس‌های جانبی با مشتری است. فروش خودکار، صدور لایسنس و نصب عملیاتی هنوز تأیید نهایی نشده‌اند. پیش از پرداخت، وضعیت عرضه را استعلام کنید. سورس و حق بازفروش شامل اشتراک نیست.</div>
@@ -152,6 +196,20 @@ footer .container{gap:14px;align-items:center;line-height:1.9}
 </div></section>
 <section class="container steps-section" id="installation"><div class="section-intro"><span class="section-eyebrow en">PLANNED DEPLOYMENT</span><span class="section-eyebrow faText hidden">مراحل راه‌اندازی</span><h2 class="section-head en">From a license to a branded bot</h2><h2 class="section-head faText hidden">از لایسنس تا ربات اختصاصی</h2><p class="section-desc" data-fa="این فرآیند پس از استقرار سرور لایسنس و تأیید نصب واقعی فعال خواهد شد.">The flow below will be available after license server deployment and production validation.</p></div><div class="steps-grid"><article class="step"><span class="step-number">01</span><h3 data-fa="انتخاب اشتراک">Choose a plan</h3><p data-fa="انتخاب مدت اشتراک برای یک ربات فعال.">Choose a billing term for one active bot.</p></article><article class="step"><span class="step-number">02</span><h3 data-fa="فعال‌سازی لایسنس">Activate your license</h3><p data-fa="دریافت کلید برای دامنه ثبت‌شده، پس از آغاز فروش رسمی.">Receive a key for your registered domain after public release.</p></article><article class="step"><span class="step-number">03</span><h3 data-fa="نصب و راه‌اندازی">Deploy your bot</h3><p data-fa="اعتبارسنجی کلید، دانلود نسخه تجاری و اجرای نصاب.">Validate the key, download the release and run guided setup.</p></article></div></section>
 <section class="container faq-section" id="faq"><div class="section-intro"><span class="section-eyebrow en">FREQUENTLY ASKED QUESTIONS</span><span class="section-eyebrow faText hidden">راهنمای خرید</span><h2 class="section-head en">Questions before you start</h2><h2 class="section-head faText hidden">سؤالات متداول</h2></div><div class="faq-grid"><details><summary data-fa="آیا هزینه سرور داخل اشتراک است؟">Is hosting included?</summary><p data-fa="خیر. هزینه سرور، دامنه و سرویس‌های جانبی جداگانه بر عهده مشتری است.">No. Server, domain and third-party service costs are paid separately.</p></details><details><summary data-fa="آیا سورس اصلی همراه اشتراک ارائه می‌شود؟">Is the source code included?</summary><p data-fa="خیر. مخزن توسعه خصوصی است و حق بازفروش نیز در اشتراک وجود ندارد.">No. The development source and resale rights are not included.</p></details><details><summary data-fa="آیا فروش اشتراک هم‌اکنون فعال است؟">Can I purchase a subscription now?</summary><p data-fa="خیر. پرداخت خودکار و فعال‌سازی تجاری هنوز تأیید نهایی نشده‌اند.">Not yet. Checkout and commercial deployment are under validation.</p></details><details><summary data-fa="نصاب عمومی چه زمانی فعال می‌شود؟">When is the public installer available?</summary><p data-fa="فایل نصاب برای بررسی عمومی موجود است؛ استفاده عملی پس از راه‌اندازی سرور لایسنس امکان‌پذیر می‌شود.">The installer is public for review, but requires a live license API and approved release.</p></details></div></section>
+<dialog class="checkout-dialog" id="checkoutDialog" aria-labelledby="checkoutTitle">
+  <form method="dialog" class="checkout-shell" id="checkoutForm">
+    <div class="checkout-head"><div><span class="section-eyebrow en">SECURE CHECKOUT</span><span class="section-eyebrow faText hidden">ثبت سفارش اشتراک</span><h2 id="checkoutTitle" class="en">Complete your order</h2><h2 class="faText hidden" lang="fa">تکمیل سفارش PadsBot Pro</h2></div><button class="close-checkout" type="button" id="closeCheckout" aria-label="Close">×</button></div>
+    <div class="checkout-selected"><span id="selectedPlanLabel">Monthly</span><strong id="selectedPlanAmount" dir="ltr">$10 USDT</strong></div>
+    <label class="checkout-label" for="customerDomain"><span class="en">Bot domain (without https://)</span><span class="faText hidden">دامنه ربات (بدون https://)</span></label>
+    <input id="customerDomain" name="domain" autocomplete="url" required maxlength="253" placeholder="bot.example.com" dir="ltr" pattern="[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)+">
+    <label class="checkout-label" for="customerContact"><span class="en">Email or Telegram contact</span><span class="faText hidden">ایمیل یا آیدی تلگرام جهت تحویل و پشتیبانی</span></label>
+    <input id="customerContact" name="contact" required maxlength="200" placeholder="@username / email@example.com" dir="ltr">
+    <div class="checkout-note" id="checkoutState" role="status"><span class="en">Payments are not open yet. The checkout will activate only after server deployment and end-to-end validation. Do not transfer funds now.</span><span class="faText hidden">پرداخت فعلاً فعال نیست. پس از راه‌اندازی سرور و تأیید تست خرید، امکان پرداخت باز می‌شود. فعلاً هیچ مبلغی ارسال نکنید.</span></div>
+    <button id="checkoutSubmit" class="btn checkout-submit" type="submit" disabled data-fa="پرداخت پس از راه‌اندازی فعال می‌شود">Checkout opens after launch</button>
+    <p class="checkout-foot en">USDT · TRON (TRC20). Hosting/domain billed separately. No source or resale rights.</p>
+    <p class="checkout-foot faText hidden">پرداخت با تتر در شبکه TRC20؛ هزینه دامنه و سرور جداست. سورس و حق بازفروش شامل اشتراک نیست.</p>
+  </form>
+</dialog>
 </main><footer><div class="container"><span><bdi dir="ltr">PadsBot Pro · Mr.HamidRouter &amp; AlirezaX5</bdi></span><span class="en">Commercial Software · Production validation in progress</span><span class="faText hidden" lang="fa">نرم‌افزار تجاری · نسخه در حال آزمون پیش از عرضه</span></div></footer>
 <script>
 (function(){
@@ -177,6 +235,24 @@ footer .container{gap:14px;align-items:center;line-height:1.9}
   try {const stored=localStorage.getItem('padsbot_showcase_language');if(stored==='en'||stored==='fa')preferred=stored;}catch(error){}
   apply(preferred);
   button.addEventListener('click',()=>apply(root.lang==='fa'?'en':'fa'));
+
+  const checkout=document.getElementById('checkoutDialog');
+  const plans={monthly:['ماهانه','Monthly',10],quarterly:['سه‌ماهه','Quarterly',27],semiannual:['شش‌ماهه','Semiannual',54],annual:['سالانه','Annual',99]};
+  document.querySelectorAll('[data-checkout]').forEach(control=>control.addEventListener('click',()=>{
+    const item=plans[control.dataset.checkout];
+    if(!item)return;
+    document.getElementById('selectedPlanLabel').textContent=root.lang==='fa'?item[0]:item[1];
+    document.getElementById('selectedPlanAmount').textContent='
+})();
+</script>
+</body></html>
++item[2]+' USDT';
+    checkout.showModal();
+  }));
+  document.getElementById('closeCheckout').addEventListener('click',()=>checkout.close());
+  checkout.addEventListener('click',event=>{if(event.target===checkout)checkout.close();});
+  document.getElementById('checkoutForm').addEventListener('submit',event=>event.preventDefault());
+
 })();
 </script>
 </body></html>
