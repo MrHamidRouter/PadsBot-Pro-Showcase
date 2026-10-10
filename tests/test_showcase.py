@@ -60,6 +60,26 @@ class ShowcaseTests(unittest.TestCase):
                     f.flush()
                     subprocess.run(["node","--check",f.name],check=True,capture_output=True,text=True)
 
+    def test_managed_hosting_prices_match_checkout(self):
+        prices={"monthly":12,"quarterly":33,"semiannual":66,"annual":123}
+        for home,checkout in (("index.html","checkout.html"),
+                              ("en.html","checkout-en.html")):
+            with self.subTest(home=home):
+                site=(ROOT/home).read_text(encoding="utf8")
+                form=(ROOT/checkout).read_text(encoding="utf8")
+                for plan,price in prices.items():
+                    block=re.search(r'<div data-plan="'+plan+r'" class="price(?: primary)?">([\\s\\S]*?)</div>',site)
+                    self.assertIsNotNone(block)
+                    self.assertIn(f'<div class="amount">${price}</div>',block.group(1))
+                    self.assertIn('class="hosting-included"',block.group(1))
+                    option=re.search(r'<option value="'+plan+r'">([^<]+)</option>',form)
+                    self.assertIsNotNone(option)
+                    self.assertIn(str(price) if home=="en.html" else
+                                  str(price).translate(str.maketrans("0123456789","۰۱۲۳۴۵۶۷۸۹")),
+                                  option.group(1))
+                self.assertIn('monthly:12,quarterly:33,semiannual:66,annual:123',form)
+                self.assertIn('hosting',site.lower()) if home=="en.html" else self.assertIn("میزبانی",site)
+
     def test_checkout_disabled_until_backend(self):
         cfg=json.loads((ROOT/"checkout-config.json").read_text(encoding="utf8"))
         self.assertFalse(cfg["accept_payments"])
