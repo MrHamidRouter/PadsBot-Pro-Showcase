@@ -38,6 +38,50 @@ class ShowcaseTests(unittest.TestCase):
                     self.assertIn(("plan-buy",f"./{checkout}?plan={plan}"),parser.links)
                 self.assertEqual(sum("plan-buy" in a for a,_ in parser.links),4)
 
+    def test_four_price_cards_are_direct_grid_children(self):
+        """Regression: accidentally duplicated <div> nested the plan cards."""
+        class PricingStructure(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.stack=[]
+                self.in_grid=False
+                self.plan_ids=[]
+                self.plan_depths=[]
+                self.links=0
+            def handle_starttag(self,tag,attrs):
+                values=dict(attrs)
+                if tag=="div":
+                    classes=values.get("class","").split()
+                    if "price-grid" in classes:
+                        if self.in_grid:
+                            raise AssertionError("Nested price grids")
+                        self.in_grid=True
+                        self.stack.append(("grid",values.get("class")))
+                    elif self.in_grid:
+                        if "price" in classes:
+                            self.plan_ids.append(values.get("data-plan"))
+                            self.plan_depths.append(len(self.stack))
+                        self.stack.append(("div",values.get("class")))
+                elif self.in_grid and tag=="a" and "plan-buy" in values.get("class","").split():
+                    self.links+=1
+            def handle_endtag(self,tag):
+                if tag=="div" and self.in_grid:
+                    if not self.stack:
+                        raise AssertionError("Unmatched closing div in pricing grid")
+                    popped=self.stack.pop()
+                    if popped[0]=="grid":
+                        self.in_grid=False
+        for file in ("index.html","en.html"):
+            with self.subTest(file=file):
+                html=(ROOT/file).read_text(encoding="utf8")
+                parser=PricingStructure()
+                parser.feed(html)
+                self.assertFalse(parser.in_grid)
+                self.assertEqual(parser.stack,[])
+                self.assertEqual(parser.plan_ids,list(PLANS))
+                self.assertEqual(parser.plan_depths,[1,1,1,1])
+                self.assertEqual(parser.links,4)
+
     def test_persian_is_visible_in_static_document(self):
         html=(ROOT/"index.html").read_text(encoding="utf8")
         self.assertIn("کسب‌وکار شما.",html)
