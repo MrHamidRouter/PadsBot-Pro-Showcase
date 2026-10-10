@@ -89,6 +89,27 @@ class ShowcaseTests(unittest.TestCase):
         self.assertIn('class="en hidden"',html)
         self.assertIn("انتخاب و ادامه خرید</a>",html)
 
+    def test_panel_integrations_and_unchanged_pricing(self):
+        """Show honest panel integration stages without altering sales links."""
+        stages={"pasarguard":"source","marzban":"partial",
+                "xui":"planned","3xui":"planned"}
+        for file in ("index.html","en.html"):
+            with self.subTest(file=file):
+                html=(ROOT/file).read_text(encoding="utf8")
+                match=re.search(r'<section class="container panel-support" '
+                                r'id="panel-support"[\\s\\S]*?</section>',html)
+                self.assertIsNotNone(match,"Missing dedicated panel section")
+                section=match.group(0)
+                for name,status in stages.items():
+                    self.assertEqual(len(re.findall(
+                        r'data-panel="'+name+'" data-status="'+status+'"',section)),1)
+                self.assertEqual(section.count('class="panel-card"'),4)
+                self.assertIn("X-UI",section)
+                self.assertIn("3X-UI",section)
+                self.assertLess(html.index('id="panel-support"'),html.index('id="pricing"'))
+                self.assertEqual(html.count('class="price-grid"'),1)
+                self.assertEqual(html.count('class="plan-buy"'),4)
+
     def test_checkout_pages(self):
         for path in ("checkout.html","checkout-en.html"):
             with self.subTest(path=path):
