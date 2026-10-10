@@ -34,9 +34,9 @@ input:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid 
 <body>
 <header><div class="wrap head"><a class="brand" href="./en.html">PadsBot <b>Pro</b></a><nav class="headnav"><a class="link" href="./en.html#pricing">Back to pricing</a><a class="link" id="languageLink" href="./checkout.html?plan=monthly">فارسی</a></nav></div></header>
 <main class="wrap"><span class="eyebrow">PADSBOT PRO / CHECKOUT</span><h1>Subscription checkout</h1>
-<p class="subtitle">Select a plan, enter your domain and contact. Once the payment server is active, a unique invoice and USDT QR code will be generated.</p>
+<p class="subtitle">Choose your plan and enter your bot domain and contact details. Once checkout opens, you will receive a unique invoice and payment QR code.</p>
 <div class="checkout-grid"><section class="panel" aria-labelledby="formTitle">
-<h2 id="formTitle">Order details</h2>
+<h2 id="formTitle">Your subscription</h2>
 <form id="orderForm">
 <label for="plan">Subscription term</label>
 <select id="plan" name="plan" required>
@@ -46,14 +46,14 @@ input:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid 
 <option value="annual">Annual — $123</option>
 </select>
 <div class="amount"><span>Total price including standard hosting</span><strong id="displayAmount">12 USDT</strong></div>
-<p class="small">Includes a one-domain Pro license, Mini App and standard managed hosting on our infrastructure. Domain and third-party charges are separate. A small unique fractional amount is added when the actual invoice is issued.</p>
-<label for="domain">Customer bot domain</label>
+<p class="small">Your plan includes a one-domain Pro license, a branded Mini App and managed hosting. Domain and third-party fees are separate. Your exact payment amount will be shown on the individual invoice.</p>
+<label for="domain">Your bot domain</label>
 <input id="domain" name="domain" required placeholder="bot.example.com" dir="ltr" maxlength="253" autocomplete="off">
-<label for="contact">Email or Telegram for license delivery</label>
+<label for="contact">Your email or Telegram for service updates</label>
 <input id="contact" name="contact" required placeholder="@username / email@example.com" dir="ltr" maxlength="200" autocomplete="email">
 <button type="submit" class="btn full" id="createInvoice">Create invoice & payment QR</button>
 </form>
-<div class="status" id="status" role="status" aria-live="polite">Checkout is not active yet. Payments and license delivery are not enabled. Do not transfer funds.</div>
+<div class="status" id="status" role="status" aria-live="polite">Online checkout is not live yet. To avoid an unverified payment, please do not transfer any funds until the official launch.</div>
 <div id="transactionArea" class="hidden">
 <label for="txid">Transaction hash (TXID) after payment</label>
 <input id="txid" maxlength="64" minlength="64" dir="ltr" placeholder="64-character transaction hash" autocomplete="off">
@@ -61,13 +61,13 @@ input:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid 
 <div id="licenseArea" class="hidden paid-details"><b>License key</b><div id="licenseKey" class="wallet mono"></div><button class="btn ghost" id="copyLicense" type="button">Copy license</button></div>
 </div>
 </section>
-<aside class="panel qr-panel" aria-labelledby="walletTitle"><h2 id="walletTitle">Pay with Trust Wallet</h2>
+<aside class="panel qr-panel" aria-labelledby="walletTitle"><h2 id="walletTitle">Pay in USDT on TRON (TRC20)</h2>
 <p class="small">Asset: Tether USDT · Network: TRON (TRC20)</p>
 <div class="qr-shell"><img id="walletQr" alt="TRC20 receiving address QR code" width="220" height="220" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&amp;data=TJ6ys9jPCXGUEyHyXX9hodjeFxQ6zWGD6Q"><div class="qr-watermark" id="qrWatermark">PREVIEW — NOT LIVE</div></div>
 <div class="wallet" id="walletAddress">TJ6ys9jPCXGUEyHyXX9hodjeFxQ6zWGD6Q</div>
 <div class="row"><button class="btn ghost" type="button" id="copyAddress">Copy address</button><button class="btn ghost" type="button" id="copyAmount">Copy amount</button></div>
 <div id="invoiceDetails" class="hidden paid-details"><p><b>Exact invoice amount:</b> <span class="mono" id="invoiceAmount"></span></p><p><b>Expires:</b> <span class="mono" id="expiry"></span></p></div>
-<p class="alert">Warning: Until the payment server issues a valid invoice, this QR is only a preview. Do not send funds. Once enabled, pay the exact invoice amount on TRC20.</p>
+<p class="alert">Important: The QR code shown here is only a preview, not a valid payment request. Once checkout is live, send only the exact amount on your verified invoice using the TRC20 network.</p>
 </aside></div></main>
 <footer>© PadsBot Pro · Mr.HamidRouter &amp; AlirezaX5</footer>
 <script>
