@@ -220,6 +220,8 @@ main>.hero .hero-primary{background:radial-gradient(ellipse at 50% 0%,#8b5cf62d,
   const button=document.getElementById('toggle');
   const translated=[...document.querySelectorAll('[data-fa]')];
   translated.forEach(el=>{el.dataset.en=el.textContent;});
+  const checkout=document.getElementById('checkoutDialog');
+  const plans={monthly:['ماهانه','Monthly',10],quarterly:['سه‌ماهه','Quarterly',27],semiannual:['شش‌ماهه','Semiannual',54],annual:['سالانه','Annual',99]};
   function apply(lang){
     const fa=lang==='fa';
     root.lang=lang;
@@ -230,30 +232,28 @@ main>.hero .hero-primary{background:radial-gradient(ellipse at 50% 0%,#8b5cf62d,
     translated.forEach(el=>{el.textContent=fa?el.dataset.fa:el.dataset.en;});
     button.textContent=fa?'English':'فارسی';
     button.setAttribute('aria-label',fa?'Switch to English':'تغییر زبان به فارسی');
-    try {localStorage.setItem('padsbot_showcase_language',lang);}catch(error){}
+    try{localStorage.setItem('padsbot_showcase_language',lang);}catch(error){}
   }
   let preferred='fa';
-  try {const stored=localStorage.getItem('padsbot_showcase_language');if(stored==='en'||stored==='fa')preferred=stored;}catch(error){}
+  try{
+    const stored=localStorage.getItem('padsbot_showcase_language');
+    if(stored==='en'||stored==='fa')preferred=stored;
+  }catch(error){}
   apply(preferred);
   button.addEventListener('click',()=>apply(root.lang==='fa'?'en':'fa'));
-
-  const checkout=document.getElementById('checkoutDialog');
-  const plans={monthly:['ماهانه','Monthly',10],quarterly:['سه‌ماهه','Quarterly',27],semiannual:['شش‌ماهه','Semiannual',54],annual:['سالانه','Annual',99]};
-  document.querySelectorAll('[data-checkout]').forEach(control=>control.addEventListener('click',()=>{
-    const item=plans[control.dataset.checkout];
-    if(!item)return;
-    document.getElementById('selectedPlanLabel').textContent=root.lang==='fa'?item[0]:item[1];
-    document.getElementById('selectedPlanAmount').textContent='
-})();
-</script>
-</body></html>
-+item[2]+' USDT';
-    checkout.showModal();
-  }));
+  document.querySelectorAll('[data-checkout]').forEach(control=>{
+    control.addEventListener('click',()=>{
+      const item=plans[control.dataset.checkout];
+      if(!item)return;
+      document.getElementById('selectedPlanLabel').textContent=root.lang==='fa'?item[0]:item[1];
+      document.getElementById('selectedPlanAmount').textContent='$'+item[2]+' USDT';
+      if(typeof checkout.showModal==='function')checkout.showModal();
+      else checkout.setAttribute('open','');
+    });
+  });
   document.getElementById('closeCheckout').addEventListener('click',()=>checkout.close());
   checkout.addEventListener('click',event=>{if(event.target===checkout)checkout.close();});
   document.getElementById('checkoutForm').addEventListener('submit',event=>event.preventDefault());
-
 })();
 </script>
 </body></html>
