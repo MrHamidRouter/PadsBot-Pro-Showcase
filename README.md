@@ -1,36 +1,55 @@
-# PadsBot Pro — Product Showcase
+<div align="center">
 
-A public-facing introduction to the PadsBot Pro commercial Telegram bot platform. **No proprietary PHP backend, customer credentials, database backups, or release archives belong in this repository.**
+# PadsBot Pro
+### Your brand. Your Telegram storefront.
 
-## Subscription proposal
+Manage digital-service sales, customers, resellers and subscriptions in one platform, with a branded Telegram Mini App and managed hosting.
 
-| Term | Managed Pro total (USDT) |
+[**Explore features and plans**](https://mrhamidrouter.github.io/PadsBot-Pro-Showcase/en.html) · [فارسی](README.fa.md)
+
+</div>
+
+---
+
+## What you get
+
+- **Telegram storefront:** Shopping menus, service details and subscription management
+- **Business dashboard:** Customer and reseller operations, service management, reporting and broadcasts
+- **Wallet workflows:** Account balances, transfer-receipt handling and payment integration points
+- **Service connectivity:** Pasarguard integration and subscription-delivery workflows
+- **Branded Mini App:** A web-based storefront that runs inside Telegram
+- **Visual brand editor:** Update your name, logo, banners, colors, message text and button labels from the owner dashboard—without editing code
+
+These describe available product modules, not a certification of every live workflow. Commercial checkout, automated fulfillment and deployment are still undergoing final validation.
+
+## Hosted for you
+
+PadsBot Pro is offered as a **managed service**. Each Pro subscription covers **one active bot on one licensed domain**, operated on PadsBot infrastructure. You manage your storefront through its dashboard; no separate VPS or source-code installation is needed.
+
+FTP, SFTP, SSH, proprietary PHP source code and resale rights are not included. Domain registration/renewal, third-party services and above-plan resources are charged separately.
+
+## Pro subscription plans
+
+| Term | Total price including hosting |
 |---|---:|
-| Monthly | **$12** |
-| Quarterly | **$33** |
-| Semiannual | **$66** |
-| Annual | **$123** |
+| Monthly | **12 USDT** |
+| Quarterly | **33 USDT** |
+| Semiannual | **66 USDT** |
+| Annual | **123 USDT** |
 
-All prices include one licensed domain, the branded Mini App, and standard managed hosting on PadsBot infrastructure (hosting component: $2/month). Domain registration/renewal, third-party fees and above-plan use are extra. Application source and resale rights are excluded. Prices are **proposed** until public checkout and production verification are ready.
+Every Pro term provides the same feature set; only the billing period changes. **The Free edition does not include the branded Mini App.**
 
-## Customer installer (pre-release)
+## How to get started
 
-The [legacy public Python bootstrap](installer/bootstrap.py) remains available for security review. With Managed Pro, customers receive a hosted bot and admin access, not source code or an installation package. It requests a purchased license key without echoing it, validates a licensed domain, contacts the operator's HTTPS license API, verifies the release archive checksum, and then delegates setup to the private application installer.
+1. Choose your subscription term.
+2. Provide your bot domain and preferred contact details.
+3. Once sales are enabled and payment is verified, the PadsBot team provisions the hosted bot and grants administrative access.
 
-**Managed checkout not yet operational:** The license API, TRC20 verification and managed provisioning require production end-to-end tests before payments can be accepted. Do not transfer funds.
+**Current availability:** Automated checkout, TRC20 settlement and hosted delivery are **not yet live or production-verified**. Please **do not transfer funds** until checkout is officially activated.
 
-The full PHP source, administrative license server, private release archives, and keys are **not** in this public repository.
+Explore the [PadsBot Pro website](https://mrhamidrouter.github.io/PadsBot-Pro-Showcase/en.html) for updates and plan details.
 
-## Presentation
+---
 
-- The static responsive landing page is in `index.html` and can be hosted using GitHub Pages.
-- This repository is for product information and verified documentation **only**.
-- Contact the developer through [MrHamidRouter's GitHub profile](https://github.com/MrHamidRouter) for current availability and licensing.
-
-## Commercial availability
-
-The product is under release validation; the online subscription checkout, central licensing deployment and production infrastructure acceptance tests have not yet been completed. Do not send payment until the owner confirms availability and the applicable service agreement.
-
-**Lead Developers:** Mr.HamidRouter & AlirezaX5
-
-[فارسی](README.fa.md)
+**PadsBot Pro** · Developed by **Mr.HamidRouter & AlirezaX5**  
+This repository is a product showcase. It does not contain proprietary application source or customer data.
