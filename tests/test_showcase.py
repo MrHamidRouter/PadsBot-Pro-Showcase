@@ -53,7 +53,7 @@ class ShowcaseTests(unittest.TestCase):
                 self.assertIn("checkout-config.json",html)
                 self.assertIn("/v1/payments/new",html)
                 self.assertIn("/v1/payments/claim",html)
-                scripts=re.findall(r"<script>([\\s\\S]*?)</script>",html)
+                scripts=re.findall(r"<script>([\s\S]*?)</script>",html)
                 self.assertEqual(len(scripts),1)
                 with tempfile.NamedTemporaryFile(mode="w",suffix=".js",encoding="utf8") as f:
                     f.write(scripts[0])
