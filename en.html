@@ -176,6 +176,18 @@ a.lang:hover{text-decoration:none}
 /* Managed Pro: compact, clearly included service scope */
 .price .hosting-included{color:#8bdcf8;font-size:12px;font-weight:750;line-height:1.85;margin:13px 0 17px}
 .price .plan-buy{margin-top:auto}
+
+/* Product integrations — independent from the pricing grid */
+.panel-support{padding:13px 0 75px}
+.panel-support .panel-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.panel-support .panel-card{min-width:0;padding:22px 19px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(154deg,#1b2238,#11192b);display:flex;flex-direction:column;gap:10px}
+.panel-support .panel-card h3{font-family:'Inter','Vazirmatn',sans-serif;font-size:20px;line-height:1.35;margin:0;letter-spacing:-.02em;color:var(--text)}
+.panel-support .panel-card p{margin:0;font-size:12px;line-height:1.9;color:var(--muted)}
+.panel-support .panel-stage{font-size:11px;font-weight:750;color:var(--green);letter-spacing:0;line-height:1.7}
+.panel-support .panel-card[data-status="planned"] .panel-stage{color:#c4b8e6}
+.panel-support .panel-explainer{margin:15px 0 0;color:var(--muted);font-size:12px;line-height:1.9}
+@media(max-width:900px){.panel-support .panel-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:590px){.panel-support .panel-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="english">
@@ -195,6 +207,36 @@ a.lang:hover{text-decoration:none}
 <article class="feature"><div class="mini">✧</div><h3 data-fa="هویت بصری اختصاصی">White-Label Identity</h3><p data-fa="تغییر عنوان، لوگو، بنرها، راه ارتباطی و رنگ‌بندی از پنل مدیریت">Adjust names, logo, banners, support destinations and palette in the admin panel.</p></article>
 <article class="feature"><div class="mini">⌘</div><h3 data-fa="راه‌اندازی مدیریت‌شده">Managed Setup</h3><p data-fa="بدون نیاز به نصب نرم‌افزار یا مدیریت سرور از طرف شما">Your bot is hosted and maintained for you; no server setup required.</p></article>
 </div></section>
+<section class="container panel-support" id="panel-support" aria-labelledby="panel-support-title">
+<div class="section-intro">
+<span class="section-eyebrow">SERVICE PANEL INTEGRATIONS</span>
+<h2 class="section-head" id="panel-support-title">Supported & planned service panels</h2>
+<p class="section-desc">PadsBot is expanding its panel integrations. The current implementation stage of each panel is shown below.</p>
+</div>
+<div class="panel-grid">
+<article class="panel-card" data-panel="pasarguard" data-status="source">
+<h3>Pasarguard</h3>
+<p class="panel-stage">API integration in source</p>
+<p>Panel management and service creation are wired to the Pasarguard API. Live end-to-end operation still requires deployment acceptance.</p>
+</article>
+<article class="panel-card" data-panel="marzban" data-status="partial">
+<h3>Marzban</h3>
+<p class="panel-stage">Initial API module</p>
+<p>A Marzban API client and token-refresh module exist in the codebase. Full ordering and fulfillment still need integration and testing.</p>
+</article>
+<article class="panel-card" data-panel="xui" data-status="planned">
+<h3>X-UI</h3>
+<p class="panel-stage">Planned integration</p>
+<p>Direct X-UI integration is not available in the current release. Support will be announced after implementation and testing.</p>
+</article>
+<article class="panel-card" data-panel="3xui" data-status="planned">
+<h3>3X-UI</h3>
+<p class="panel-stage">Planned integration</p>
+<p>Direct support for 3X-UI variants is also planned, but is not yet a verified compatibility option.</p>
+</article>
+</div>
+<p class="panel-explainer">An API module does not guarantee compatibility with every panel version. Production support is confirmed only after live testing.</p>
+</section>
 <section class="pricing" id="pricing"><div class="container"><div class="section-intro"><span class="section-eyebrow en">SUBSCRIPTION PLANS</span><span class="section-eyebrow faText hidden">اشتراک تجاری</span><h2 class="section-head en">Simple subscription pricing</h2><h2 class="section-head faText hidden" lang="fa">تعرفه‌های PadsBot Pro</h2><p class="section-desc" data-fa="تمام پلن‌های Pro همراه با مینی‌اپ و میزبانی مدیریت‌شده روی سرور ما؛ هزینه دامنه جداست.">All Pro plans include the branded Mini App and managed hosting on our servers; domain registration is extra.</p></div><div class="price-grid">
 <div data-plan="monthly" class="price primary">
 <span class="price-highlight en">POPULAR START</span><span class="price-highlight faText hidden">شروع پیشنهادی</span>
