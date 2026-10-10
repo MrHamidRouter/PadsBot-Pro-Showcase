@@ -22,6 +22,19 @@ Manage digital-service sales, customers, resellers and subscriptions in one plat
 
 These describe available product modules, not a certification of every live workflow. Commercial checkout, automated fulfillment and deployment are still undergoing final validation.
 
+## Service panel integrations
+
+The available integration work and planned connectors are listed below.
+
+| Panel | Current status |
+|---|---|
+| **Pasarguard** | API paths for panel management and service creation exist in the source; live validation is still required |
+| **Marzban** | API and token-refresh module exists; complete purchase and fulfillment remain unverified |
+| **X-UI** | Direct integration planned |
+| **3X-UI** | Direct integration planned |
+
+Production support depends on compatible versions and successful live testing.
+
 ## Hosted for you
 
 PadsBot Pro is offered as a **managed service**. Each Pro subscription covers **one active bot on one licensed domain**, operated on PadsBot infrastructure. You manage your storefront through its dashboard; no separate VPS or source-code installation is needed.
