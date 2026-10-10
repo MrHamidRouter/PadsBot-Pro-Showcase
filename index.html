@@ -74,6 +74,53 @@ footer .container{gap:14px;align-items:center;line-height:1.9}
 @media(max-width:620px){.top{flex-wrap:wrap} .top nav{width:100%;justify-content:space-between;gap:7px} .container,body>.container:first-child>.top{width:calc(100% - 28px)}.top{min-height:70px;padding:10px 0;gap:9px}.logo{font-size:18px}.logo:before{width:33px;height:33px;font-size:19px}nav{gap:9px}nav a{font-size:11px}.lang{min-width:65px!important;padding:6px 9px!important}.hero{padding:29px 0 53px}.hero-primary{padding:26px 22px}.hero h1,.hero h1.faText{font-size:clamp(30px,8vw,41px)}.hero p{font-size:14px}.hero-preview{display:flex;padding:21px}.grid,.price-grid,.steps-grid,.faq-grid{grid-template-columns:1fr}.feature{min-height:auto}.features{padding-bottom:53px}.pricing{padding:48px 0 57px}.price{min-height:200px}.price .amount{font-size:39px}.section-head{font-size:24px}.steps-section{padding-top:52px}.faq-section{padding-bottom:50px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 
+
+/* Desktop hero layout: intentional centered composition, independent of RTL. */
+@media (min-width:1001px){
+  main>.hero.container{
+    width:min(1140px,calc(100% - 64px));
+    max-width:1140px;
+    margin-inline:auto;
+    padding:54px 0 68px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+  }
+  main>.hero .hero-primary{
+    width:100%;
+    max-width:1140px;
+    padding:47px 55px 42px;
+    text-align:center;
+    background:radial-gradient(ellipse at 50% 0%,#55437b50,transparent 62%),linear-gradient(145deg,#20233d,#11182a 72%);
+  }
+  main>.hero .hero-primary .en,
+  main>.hero .hero-primary .faText{margin-inline:auto;max-width:800px}
+  main>.hero .hero-primary h1{
+    font-size:clamp(40px,4vw,61px);
+    line-height:1.43;
+    margin:17px auto 18px;
+  }
+  main>.hero .hero-primary p{
+    max-width:780px;
+    margin-inline:auto;
+    text-align:center;
+  }
+  main>.hero .hero-primary .pills,
+  main>.hero .hero-primary .buttons{justify-content:center}
+  main>.hero .hero-preview{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:12px;
+    padding:21px;
+    align-items:stretch;
+  }
+  main>.hero .hero-preview .preview-header,
+  main>.hero .hero-preview .preview-caption{grid-column:1/-1}
+  main>.hero .hero-preview .preview-item{min-width:0}
+}
+
 </style>
 </head>
 <body class="fa">
