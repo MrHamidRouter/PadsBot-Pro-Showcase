@@ -40,13 +40,13 @@ input:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid 
 <form id="orderForm">
 <label for="plan">Subscription term</label>
 <select id="plan" name="plan" required>
-<option value="monthly">Monthly — $10</option>
-<option value="quarterly">Quarterly — $27</option>
-<option value="semiannual">Semiannual — $54</option>
-<option value="annual">Annual — $99</option>
+<option value="monthly">Monthly — $12</option>
+<option value="quarterly">Quarterly — $33</option>
+<option value="semiannual">Semiannual — $66</option>
+<option value="annual">Annual — $123</option>
 </select>
-<div class="amount"><span>Base subscription price</span><strong id="displayAmount">10 USDT</strong></div>
-<p class="small">A small unique fractional amount will be added when a real invoice is created.</p>
+<div class="amount"><span>Total price including standard hosting</span><strong id="displayAmount">12 USDT</strong></div>
+<p class="small">Includes a one-domain Pro license, Mini App and standard managed hosting on our infrastructure. Domain and third-party charges are separate. A small unique fractional amount is added when the actual invoice is issued.</p>
 <label for="domain">Customer bot domain</label>
 <input id="domain" name="domain" required placeholder="bot.example.com" dir="ltr" maxlength="253" autocomplete="off">
 <label for="contact">Email or Telegram for license delivery</label>
@@ -74,7 +74,7 @@ input:focus,select:focus,button:focus-visible,a:focus-visible{outline:2px solid 
 (()=>{
   "use strict";
   const qs=id=>document.getElementById(id);
-  const prices={monthly:10,quarterly:27,semiannual:54,annual:99};
+  const prices={monthly:12,quarterly:33,semiannual:66,annual:123};
   const wallet="TJ6ys9jPCXGUEyHyXX9hodjeFxQ6zWGD6Q";
   const msg={
     disabled:"Payment server is not enabled; do not send funds. Deployment and live validation are required.",
