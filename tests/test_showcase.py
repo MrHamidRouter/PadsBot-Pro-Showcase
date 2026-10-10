@@ -68,7 +68,7 @@ class ShowcaseTests(unittest.TestCase):
                 site=(ROOT/home).read_text(encoding="utf8")
                 form=(ROOT/checkout).read_text(encoding="utf8")
                 for plan,price in prices.items():
-                    block=re.search(r'<div data-plan="'+plan+r'" class="price(?: primary)?">([\\s\\S]*?)</div>',site)
+                    block=re.search(r'<div data-plan="'+plan+r'" class="price(?: primary)?">([\\s\\S]*?)<a class="plan-buy"',site)
                     self.assertIsNotNone(block)
                     self.assertIn(f'<div class="amount">${price}</div>',block.group(1))
                     self.assertIn('class="hosting-included"',block.group(1))
