@@ -165,6 +165,18 @@ main>.hero .hero-primary{background:radial-gradient(ellipse at 50% 0%,#8b5cf62d,
 .checkout-foot{margin:0;color:#a9b4cc;font-size:11px;line-height:1.9}
 @media(max-width:620px){.checkout-shell{padding:22px}.price{min-height:242px}}
 
+
+/* Subscription feature clarity */
+.price .plan-detail{margin:13px 0 18px;min-height:76px;font-size:12px;line-height:1.9;color:#c4d0e5}
+.free-compare{display:grid;grid-template-columns:minmax(180px,.75fr) minmax(0,1.8fr);align-items:center;gap:24px;margin-top:25px;padding:24px;border:1px solid #384568;border-radius:18px;background:linear-gradient(115deg,#1b2540,#121b2f)}
+.free-compare h3{margin:4px 0 0;font-size:18px}
+.compare-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.compare-options>div{min-width:0;padding:17px;border:1px solid #334564;background:#101a2c;border-radius:12px}
+.compare-options .pro-compare{border-color:#8065ce;background:#8b5cf616}
+.compare-options strong{direction:ltr;display:block;text-align:start;font-family:Inter,sans-serif;font-size:18px}
+.compare-options p{margin:7px 0 0;color:#b9c7de;font-size:12px;line-height:1.8}
+@media(max-width:760px){.free-compare{grid-template-columns:1fr}.price .plan-detail{min-height:0}}
+@media(max-width:420px){.compare-options{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="fa">
@@ -185,11 +197,12 @@ main>.hero .hero-primary{background:radial-gradient(ellipse at 50% 0%,#8b5cf62d,
 <article class="feature"><div class="mini">⌘</div><h3 data-fa="نصاب تعاملی">Interactive Installer</h3><p data-fa="بررسی محیط، اعتبار HTTPS و وب‌هوک و مراحل نصب کنترل‌شده">Environment checks, HTTPS/webhook verification and guarded deployment workflows.</p></article>
 </div></section>
 <section class="pricing" id="pricing"><div class="container"><div class="section-intro"><span class="section-eyebrow en">SUBSCRIPTION PLANS</span><span class="section-eyebrow faText hidden">اشتراک تجاری</span><h2 class="section-head en">Simple subscription pricing</h2><h2 class="section-head faText hidden" lang="fa">تعرفه‌های PadsBot Pro</h2><p class="section-desc" data-fa="امکانات یکسان در تمامی دوره‌ها؛ هزینه زیرساخت بر عهده مشتری است.">Same Pro capabilities across all terms; hosting is separate.</p></div><div class="price-grid">
-<div data-plan="monthly" class="price primary"><span class="price-highlight en">POPULAR START</span><span class="price-highlight faText hidden">شروع پیشنهادی</span><span class="tag" data-fa="ماهانه">Monthly</span><div class="amount">$10</div><p data-fa="یک ربات فعال · یک ماه">One active bot · 1 month</p><button class="plan-buy" type="button" data-checkout="monthly" data-fa="انتخاب و ادامه خرید">Choose plan →</button></div>
-<div data-plan="quarterly" class="price"><span class="tag" data-fa="سه‌ماهه">Quarterly</span><div class="amount">$27</div><p data-fa="یک ربات فعال · سه ماه">One active bot · 3 months</p><button class="plan-buy" type="button" data-checkout="quarterly" data-fa="انتخاب و ادامه خرید">Choose plan →</button></div>
-<div data-plan="semiannual" class="price"><span class="tag" data-fa="شش‌ماهه">Semiannual</span><div class="amount">$54</div><p data-fa="یک ربات فعال · شش ماه">One active bot · 6 months</p><button class="plan-buy" type="button" data-checkout="semiannual" data-fa="انتخاب و ادامه خرید">Choose plan →</button></div>
-<div data-plan="annual" class="price"><span class="tag" data-fa="سالانه">Annual</span><div class="amount">$99</div><p data-fa="یک ربات فعال · یک سال">One active bot · 12 months</p><button class="plan-buy" type="button" data-checkout="annual" data-fa="انتخاب و ادامه خرید">Choose plan →</button></div>
+<div data-plan="monthly" class="price primary"><span class="price-highlight en">POPULAR START</span><span class="price-highlight faText hidden">شروع پیشنهادی</span><span class="tag" data-fa="ماهانه">Monthly</span><div class="amount">$10</div><p data-fa="یک ربات فعال · یک ماه">One active bot · 1 month</p><p class="plan-detail" data-fa="شروع کم‌هزینه؛ همه امکانات رایگان + مینی‌اپ اختصاصی.">Low-commitment start. Everything in Free plus a branded Mini App.</p><button class="plan-buy" type="button" data-checkout="monthly" data-fa="انتخاب و ادامه خرید">Choose plan →</button></div>
+<div data-plan="quarterly" class="price"><span class="tag" data-fa="سه‌ماهه">Quarterly</span><div class="amount">$27</div><p data-fa="یک ربات فعال · سه ماه">One active bot · 3 months</p><p class="plan-detail" data-fa="همان امکانات Pro با پرداخت سه‌ماهه؛ ۳ دلار کمتر از خرید ماهانه.">Same Pro features for 3 months; save $3 vs monthly.</p><button class="plan-buy" type="button" data-checkout="quarterly" data-fa="انتخاب و ادامه خرید">Choose plan →</button></div>
+<div data-plan="semiannual" class="price"><span class="tag" data-fa="شش‌ماهه">Semiannual</span><div class="amount">$54</div><p data-fa="یک ربات فعال · شش ماه">One active bot · 6 months</p><p class="plan-detail" data-fa="همان امکانات Pro برای شش ماه؛ ۶ دلار صرفه‌جویی.">Same Pro features for 6 months; save $6 vs monthly.</p><button class="plan-buy" type="button" data-checkout="semiannual" data-fa="انتخاب و ادامه خرید">Choose plan →</button></div>
+<div data-plan="annual" class="price"><span class="tag" data-fa="سالانه">Annual</span><div class="amount">$99</div><p data-fa="یک ربات فعال · یک سال">One active bot · 12 months</p><p class="plan-detail" data-fa="همان امکانات Pro برای یک سال؛ ۲۱ دلار صرفه‌جویی.">Same Pro features for a year; save $21 vs monthly.</p><button class="plan-buy" type="button" data-checkout="annual" data-fa="انتخاب و ادامه خرید">Choose plan →</button></div>
 </div>
+<div class="free-compare"><div><span class="section-eyebrow en">FREE VS PRO</span><span class="section-eyebrow faText hidden">مقایسه نسخه رایگان و حرفه‌ای</span><h3 class="en">One clear difference: Mini App</h3><h3 class="faText hidden">تفاوت اصلی: مینی‌اپ اختصاصی</h3></div><div class="compare-options"><div><strong>Free</strong><p data-fa="امکانات اصلی ربات، بدون مینی‌اپ تلگرام">Core bot features, without Telegram Mini App</p></div><div class="pro-compare"><strong>Pro</strong><p data-fa="تمام امکانات نسخه رایگان + مینی‌اپ اختصاصی">Everything in Free + a branded Telegram Mini App</p></div></div></div>
 <div class="notice en"><strong>Pre-launch pricing proposal.</strong> Hosting, domain and third-party provider charges are paid by the customer. Subscription checkout, license fulfillment and fresh-production deployment are not yet certified. Request availability before making payment. Source code and resale rights are excluded.</div>
 <div class="notice faText hidden" lang="fa"><strong>تعرفه پیشنهادی پیش از عرضه.</strong> هزینه سرور، دامنه و سرویس‌های جانبی با مشتری است. فروش خودکار، صدور لایسنس و نصب عملیاتی هنوز تأیید نهایی نشده‌اند. پیش از پرداخت، وضعیت عرضه را استعلام کنید. سورس و حق بازفروش شامل اشتراک نیست.</div>
 <div class="buttons"><a class="btn secondary" href="https://github.com/MrHamidRouter" data-fa="ارتباط با توسعه‌دهنده ↗">Contact the developer ↗</a><a class="btn secondary" href="https://github.com/MrHamidRouter" data-fa="دریافت اطلاعات محصول ↗">Request product details ↗</a></div>
